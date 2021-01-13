@@ -9,7 +9,7 @@
 	[Range(1 , 36)]
 	public int FOV;
 	
-	public GameObject[] LaserNodes;
+	//public Dictionary <int, int> LaserNodes;
 	public GameObject LaserNodeRef;
 	
 	void Start() {
