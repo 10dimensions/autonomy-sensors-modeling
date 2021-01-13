@@ -1,6 +1,7 @@
 # Autonomy-Sensors-Suite
 
 Project for modeling & simulation sensors utilized in the realization of fully autonomous vehicles.
+Built in Unity Engine 2019.4.1f1
 
 Some of the most common sensors which could be simulated are:<br/>
 -2D LIDAR<br/>
