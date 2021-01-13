@@ -8,6 +8,7 @@ using System.Collections;
 	 
      [SerializeField] private float laserMaxLength; 
 	 [SerializeField] private float angularOffset;
+	 [SerializeField] private float frequency;
 	 
 	 public Transform CarBase;
  
@@ -19,11 +20,12 @@ using System.Collections;
 		StartCoroutine( ProjectLaser( CarBase.position, laserMaxLength ) );  
      }
 		
-	//Set Laser Parameters Length, & Angle
-     public void SetParameters (float _length, float _angle) 
+	//Set Laser Parameters Length, Angle, Frequency
+     public void SetParameters (float _length, float _angle, float _frequency) 
      {	
 		laserMaxLength = _length;
 		angularOffset = _angle;
+		frequency = _frequency;
      }
 		
 		
@@ -48,10 +50,8 @@ using System.Collections;
 		float lineColorLength = (endPosition - targetPosition).magnitude / laserMaxLength;
 		Color _color = Color.Lerp(Color.red, Color.green, lineColorLength);
 		laserLineRenderer.material.color = _color;
-		//laserLineRenderer.endColor = _color;
-		
-		 
-		 yield return new WaitForSeconds(0.25f);
+			 
+		 yield return new WaitForSeconds(frequency);
 		 
 		 StartCoroutine( ProjectLaser( transform.parent.position, laserMaxLength ) ); 
 		 

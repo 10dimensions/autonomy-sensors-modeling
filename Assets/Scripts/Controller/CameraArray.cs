@@ -34,7 +34,6 @@ public class CameraArray : MonoBehaviour
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
     {	
 		Graphics.Blit(source, destination, DepthMapMat);
-        //Graphics.Blit(source, destination, mat);
     }
 
 }
